@@ -18,10 +18,10 @@ const Navbar = () => {
 
   function ChangePage() {
     document.getElementById("myDropdown").classList.toggle("show");
-    console.log("button is clicked");
+    // console.log("button is clicked");
   }
   // Close the dropdown if the user clicks outside of it
-  console.log("button is clicked");
+  // console.log("button is clicked");
   window.onclick = function (event) {
     if (!event.target.matches(".dropbtn")) {
       var dropdowns = document.getElementsByClassName("dropdown-content");
@@ -43,11 +43,16 @@ const Navbar = () => {
     >
       <img
         src="https://rb.gy/ulxxee"
-        className="w-[80px] cursor-pointer object-contain"
+        className="w-[100px] cursor-pointer object-contain"
         alt="netflix-logo"
       />
-      <div>
-        <p>Home</p>
+      <div class="buttons">
+        <button class="button button4">Home</button>
+        <button class="button button4">TV Shows</button>
+        <button class="button button4">Movies</button>
+        <button class="button button4">Trending</button>
+        <button class="button button4">Recently Added</button>
+        <button class="button button4">My List</button>
       </div>
       <div class="dropdown">
         <div>

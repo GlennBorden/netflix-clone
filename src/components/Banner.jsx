@@ -5,19 +5,19 @@ const Banner = () => {
   const [movie, setMovie] = useState([]);
 
   useEffect(() => {
+    setInterval(fetchData, 3000);
     async function fetchData() {
       const request = await axios.get(requests.fetchNetflixOriginals);
       // get a random from random and use it to get a random image from the results
       const randomNumber = Math.floor(
         Math.random() * request.data.results.length - 1
       );
+      // setInterval(setMovie, 3000);
       setMovie(request.data.results[randomNumber]);
       return request;
     }
     fetchData();
   }, []);
-
-  
 
   function truncate(str, n) {
     return str?.length > n ? str.substr(0, n - 1) + "..." : str;
@@ -46,7 +46,6 @@ const Banner = () => {
         </h1>
       </div>
       <div className="banner--fadeBottom"></div>
-
     </header>
   );
 };
