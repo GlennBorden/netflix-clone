@@ -54,6 +54,18 @@ const Navbar = () => {
         <button class="button button4">Recently Added</button>
         <button class="button button4">My List</button>
       </div>
+      <div class="searchNote">
+        <link
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet"
+        ></link>
+        <button class="button button4">
+          <i class="material-icons">search</i>
+        </button>
+        <button class="button button4">
+          <i class="material-icons">notifications</i>
+        </button>
+      </div>
       <div class="dropdown">
         <div>
           <img

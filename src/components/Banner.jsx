@@ -5,7 +5,7 @@ const Banner = () => {
   const [movie, setMovie] = useState([]);
 
   useEffect(() => {
-    setInterval(fetchData, 3000);
+    setInterval(fetchData, 5000);
     async function fetchData() {
       const request = await axios.get(requests.fetchNetflixOriginals);
       // get a random from random and use it to get a random image from the results
@@ -16,7 +16,8 @@ const Banner = () => {
       setMovie(request.data.results[randomNumber]);
       return request;
     }
-    fetchData();
+    // fetchData();
+    // ("https://api.themoviedb.org/3/discover/tv?api_key=b8147d9a2b320232dcbd7689528ce05a&with_networks=213");
   }, []);
 
   function truncate(str, n) {

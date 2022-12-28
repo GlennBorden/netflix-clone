@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react";
 import YouTube from "react-youtube";
 import axios from "../axios";
 import movieTrailer from "movie-trailer";
+import truncate from "./Banner";
 
 const base_url = "https://image.tmdb.org/t/p/original";
 
 const Row = ({ title, fetchUrl, isLargeRow }) => {
   const [movies, setMovies] = useState([]);
   const [trailerUrl, setTrailerUrl] = useState("");
+  const [movie, setMovie] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
@@ -18,11 +20,9 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
     fetchData();
   }, [fetchUrl]);
 
-  
-
   const opts = {
     height: "390",
-    width: "100%",
+    width: "50%",
     playerVars: {
       autoplay: 1,
     },
@@ -43,7 +43,7 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
 
   return (
     <div className=" text-white ml-[20px] flex flex-col ">
-      <h2 className="text-xl font-bold capitalize">{title}</h2>
+      <h2 className="text-xl font-bold capitalize text-center">{title}</h2>
 
       <div className="movie_poster__scrollbar gap-3 flex overflow-y-hidden overflow-x-scroll p-[20px]">
         {movies.map((movie) => (
@@ -58,7 +58,13 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
           />
         ))}
       </div>
-      {trailerUrl && <YouTube videoId={trailerUrl} opts={opts}></YouTube>}
+      <div>
+        {trailerUrl && <YouTube videoId={trailerUrl} opts={opts}></YouTube>}
+        {/* <h1 className="banner__description">
+          {"This is the movie bio."}
+          {truncate(movie?.overview, 150)}
+        </h1> */}
+      </div>
     </div>
   );
 };
