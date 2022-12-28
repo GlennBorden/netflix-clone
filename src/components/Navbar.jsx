@@ -46,6 +46,9 @@ const Navbar = () => {
         className="w-[80px] cursor-pointer object-contain"
         alt="netflix-logo"
       />
+      <div>
+        <p>Home</p>
+      </div>
       <div class="dropdown">
         <div>
           <img
