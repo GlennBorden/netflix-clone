@@ -6,8 +6,8 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const emailX = "gborden@icstars.org";
-  const passX = "Glenn109007$";
+  const emailX = "";
+  const passX = "";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
