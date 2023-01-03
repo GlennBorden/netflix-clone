@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import YouTube from "react-youtube";
 import axios from "../axios";
 import movieTrailer from "movie-trailer";
-import truncate from "./Banner";
+// import truncate from "./Banner";
 
 const base_url = "https://image.tmdb.org/t/p/original";
 
 const Row = ({ title, fetchUrl, isLargeRow }) => {
   const [movies, setMovies] = useState([]);
   const [trailerUrl, setTrailerUrl] = useState("");
-  const [movie, setMovie] = useState([]);
+  // const [movie, setMovie] = useState([]);
 
   useEffect(() => {
     async function fetchData() {

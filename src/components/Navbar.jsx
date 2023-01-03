@@ -34,6 +34,14 @@ const Navbar = () => {
       }
     }
   };
+  function showSearch() {
+    let x = document.getElementById("search");
+    if (x.style.display === "none") {
+      x.style.display = "inline";
+    } else {
+      x.style.display = "none";
+    }
+  }
 
   return (
     <div
@@ -47,23 +55,68 @@ const Navbar = () => {
         alt="netflix-logo"
       />
       <div class="buttons">
-        <button class="button button4">Home</button>
-        <button class="button button4">TV Shows</button>
-        <button class="button button4">Movies</button>
-        <button class="button button4">Trending</button>
-        <button class="button button4">Recently Added</button>
-        <button class="button button4">My List</button>
+        <a
+          href="https://www.google.com/aclk?sa=l&ai=DChcSEwjtl77GmJ_8AhWDhMgKHTznCnoYABAAGgJxdQ&sig=AOD64_1yU4Lr-LmZOJ2oowCxAzTkNWjLxg&q&adurl&ved=2ahUKEwjv-q3GmJ_8AhXPnHIEHTK0D-gQ0Qx6BAgKEAE"
+          class="button button4"
+        >
+          Home
+        </a>
+        <a
+          href="https://www.google.com/search?q=tv+shows&rlz=1C1CHBD_en-GBUS1021US1021&oq=tv+shows&aqs=chrome..69i57j0i131i433i512l3j0i131i433l3j0i131i433i512j0i131i433j0i433.1295j0j7&sourceid=chrome&ie=UTF-8"
+          class="button button4"
+        >
+          TV Shows
+        </a>
+        <a
+          href="https://www.google.com/search?q=movies&rlz=1C1CHBD_en-GBUS1021US1021&ei=DrmtY4SMJbCzqtsPsOiHaA&ved=0ahUKEwiEy_znmJ_8AhWwmWoFHTD0AQ0Q4dUDCBA&uact=5&oq=movies&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIKCAAQsQMQgwEQQzINCAAQsQMQgwEQQxCLAzINCAAQsQMQgwEQQxCLAzIECAAQQzIECAAQQzIQCAAQgAQQsQMQgwEQyQMQCjIECAAQQzIECAAQQzIKCAAQsQMQgwEQQzIECAAQQzoNCAAQQxCLAxCoAxCmAzoTCAAQsQMQgwEQQxCLAxCmAxCoAzoHCAAQQxCLAzoRCC4QgAQQsQMQxwEQ0QMQiwM6CAguEIAEEIsDOg4IABCABBCxAxCDARCLAzoHCC4Q1AIQQzoKCC4QsQMQgwEQQzoOCAAQgAQQsQMQgwEQyQNKBAhBGABKBAhGGABQAFioBWCyBmgAcAF4AIAB1QGIAZIFkgEFMS4zLjGYAQCgAQG4AQPAAQE&sclient=gws-wiz-serp"
+          class="button button4"
+        >
+          Movies
+        </a>
+        <a href="https://www.tiktok.com/tag/trending" class="button button4">
+          Trending
+        </a>
+        <a
+          href="https://tubitv.com/category/recently_added"
+          class="button button4"
+        >
+          Recently Added
+        </a>
+        <a href="https://www.walmart.com/lists" class="button button4">
+          My List
+        </a>
       </div>
       <div class="searchNote">
         <link
           href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet"
         ></link>
-        <button class="button button4">
-          <i class="material-icons">search</i>
+        {/* <script
+          async
+          src="https://cse.google.com/cse.js?cx=46018b7e6897f43f7"
+        ></script> */}
+        {/* <div class="button button4"></div> */}
+        <button class="searchButton">
+          <i onClick={showSearch} class="material-icons">
+            search
+          </i>
+          <input
+            id="search"
+            type="text"
+            class="button button4"
+            autocomplete="off"
+            style={{ color: "black" }}
+            // onkeyup="myFunction()"
+            placeholder="Search for..."
+          ></input>
         </button>
         <button class="button button4">
-          <i class="material-icons">notifications</i>
+          <a
+            class="material-icons"
+            href="https://www.youtube.com/watch?v=ytBRZqequ_Q"
+          >
+            notifications
+          </a>
         </button>
       </div>
       <div class="dropdown">
